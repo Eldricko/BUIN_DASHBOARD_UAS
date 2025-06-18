@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BI Dashboard</title>
+</head>
+<body>
+    <h1>Business Intelligence Dashboard</h1>
+
+    <h2>Most Used Payment Methods</h2>
+    {{ payment_chart|safe }}
+
+    <h2>Quantity Sold by Product Category</h2>
+    {{ category_chart|safe }}
+
+    <h2>Sales by State and City</h2>
+    {{ location_chart|safe }}
+
+
+    <h2>Forecast Visualizations</h2>
+
+    <h3>Monthly Payment Mode Prediction</h3>
+    {% for chart in payment_forecasts %}
+        {{ chart|safe }}
+    {% endfor %}
+
+    <h3>Monthly Product Category Sales Prediction</h3>
+    {% for chart in category_forecasts %}
+        {{ chart|safe }}
+    {% endfor %}
+
+    <h3>Monthly City Sales Prediction</h3>
+    {% for chart in city_forecasts %}
+        {{ chart|safe }}
+    {% endfor %}
+
+
+</body>
+</html>
+
+ 
